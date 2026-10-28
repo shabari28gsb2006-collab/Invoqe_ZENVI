@@ -1,0 +1,6 @@
+{
+  "name": "ZENVI — Premium Social Media Platform",
+  "description": "A premium, expressive social media platform where every moment connects. Complete with responsive feeds, reels, messages, communities, discovery, and smart appearance themes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

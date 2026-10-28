@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: zenvi
+    runtime: node
+    plan: starter
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ZENVI_DATA_DIR
+        value: /var/data
+      - key: ZENVI_UPLOADS_DIR
+        value: /var/data/uploads
+    disk:
+      name: zenvi-data
+      mountPath: /var/data
+      sizeGB: 1

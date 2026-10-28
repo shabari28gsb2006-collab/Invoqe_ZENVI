@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --color-primary: #7667FF;
+    --color-primary-hover: #6352ff;
+    --color-secondary: #A78BFA;
+    --color-accent-blue: #3B82F6;
+    --color-bg-light: #F5F7FF;
+    --color-bg-dark: #0B1020;
+    --color-surface-dark: #12182B;
+    --color-card-dark: #151D33;
+    --color-border-dark: #1F2B48;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  /* When dark class is active on <html> */
+  html.dark {
+    color-scheme: dark;
+    background-color: #0B1020;
+    color: #F1F5F9;
+  }
+
+  html:not(.dark) {
+    color-scheme: light;
+    background-color: #F5F7FF;
+    color: #0F172A;
+  }
+}
+
+/* Custom scrollbars that adapt to dark and light */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(118, 103, 255, 0.6);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(118, 103, 255, 0.8);
+}
+
+/* Utility hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
